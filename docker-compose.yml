@@ -1,0 +1,8 @@
+version: '3.1'
+
+services:
+  qualix:
+    image: arueth/qualix
+
+  guacd:
+    image: guacamole/guacd:0.9.10-incubating

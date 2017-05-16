@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  guacd:
+    networks:
+      - guacamole
+
+  qualix:
+    depends_on:
+      - guacd
+    environment:
+      - GUACAMOLE_HOME=/opt/guacamole/.guacamole
+      - GUACD_HOSTNAME=guacd
+      - GUACD_PORT=4822
+    networks:
+      - guacamole
+    ports:
+      - '80:8080'
+
+networks:
+  guacamole:
